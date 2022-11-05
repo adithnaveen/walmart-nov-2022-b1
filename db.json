@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "title": "Mr.",
+      "name": "Varma"
+    },
+    {
+      "id": 2,
+      "title": "Mr.",
+      "name": "Tangaraj"
+    },
+    {
+      "id": 3,
+      "title": "Ms/Mrs.",
+      "name": "Priya"
+    },
+    {
+      "id": 4
+    },
+    {
+      "title": "Mr",
+      "name": "Naveen",
+      "id": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
