@@ -1,25 +1,42 @@
-// synchronous 
-function divide(num1, num2) {
+// asynchronous 
+function divide(num1, num2, callback) {
 
-    if (typeof num1 != 'number') {
-        throw ("Pls pass first arg as number");
-    }
-    if (typeof num2 != 'number') {
-        throw ("please pass second arg as number");
-    }
-    if (num1 === 0) {
-        throw ("Dont Divide by zero")
+    if (typeof callback != 'function') {
+        throw "Please pass callback function";
     }
 
-    return num1 / num2;
+    setTimeout(() => {
+        if (typeof num1 !== 'number') {
+            callback("Pls pass first arg as number");
+            return;
+        }
+        if (typeof num2 !== 'number') {
+            callback("please pass second arg as number");
+            return;
+        }
+        if (num2 === 0) {
+            callback("Dont divide by zero");
+            return
+        }
+
+        callback(null, num1 / num2);
+
+    }, 0);
 }
 
 console.log("Start");
 let n1 = 100;
-let n2 = 0;
+let n2 = 30;
 
-let result = divide(n1, n2);
-console.log("Result is " + result);
+
+divide(n1, n2, (err, res) => {
+    if (err) {
+        console.log("Error in Processing : " + err);
+    } else {
+        console.log("Result " + res)
+    }
+});
+
 console.log("End");
 
 // your story will continue here also 
